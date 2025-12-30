@@ -8,7 +8,7 @@ const Reviews: React.FC = () => {
       author: 'Lauany Andrade'
     },
     {
-      text: '"Melhor fotógrafo q já encontrei, nota 10/10, momentos inesquecíveis: semifinal, amistoso, rodadas de campeonato, comemoração, tudo, vc faz parte da nossa família \\"bad boys green\\", só tenho a agradecer mmlk tá no coração 🤍."',
+      text: '"Melhor fotógrafo q já encontrei, nota 10/10, momentos inesquecíveis: semifinal, amistoso, rodadas de campeonato, comemoração, tudo, vc faz parte da nossa família "bad boys green", só tenho a agradecer mmlk tá no coração 🤍."',
       author: 'Phablo Henrique'
     },
     {
