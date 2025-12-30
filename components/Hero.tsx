@@ -30,7 +30,6 @@ const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/50 via-brand-dark to-brand-dark"></div>
       </div>
       
-      {/* Added pt-24 to ensure content starts below the large navbar/logo */}
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto pt-24 md:pt-32">
         <div className="mb-6">
           <p className="text-brand-cyan font-bold tracking-[0.4em] uppercase text-sm md:text-base animate-subtitle-fade">
@@ -43,21 +42,21 @@ const Hero: React.FC = () => {
         </h1>
 
         <p 
-          className="text-gray-300 text-base md:text-lg max-w-2xl mx-auto mb-8 animate-subtitle-fade leading-relaxed font-light tracking-wide opacity-0"
-          style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}
+          className="text-gray-300 text-base md:text-lg max-w-2xl mx-auto mb-8 animate-subtitle-fade leading-relaxed font-light tracking-wide"
+          style={{ animationDelay: '0.3s' }}
         >
           Especialista em capturar a essência através da fotografia de alto impacto e design estratégico, elevando marcas e momentos a um novo patamar visual.
         </p>
         <div 
-          className="mt-4 animate-subtitle-fade opacity-0" 
-          style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}
+          className="mt-4 animate-subtitle-fade" 
+          style={{ animationDelay: '0.6s' }}
         >
           <a 
             href="#contact" 
             onClick={handleStartProject}
-            className="bg-brand-cyan text-brand-dark px-10 py-4 font-bold text-sm uppercase tracking-widest hover:bg-white transition-all inline-block shadow-lg shadow-brand-cyan/20 cursor-pointer"
+            className="bg-brand-cyan text-brand-dark px-10 py-4 font-bold text-sm uppercase tracking-widest hover:bg-white transition-all inline-block shadow-lg shadow-brand-cyan/20 cursor-pointer active:scale-95"
           >
-            Iniciar Projeto
+            Solicitar Orçamento
           </a>
         </div>
       </div>
