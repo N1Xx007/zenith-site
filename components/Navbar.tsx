@@ -37,18 +37,18 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className="fixed w-full z-50 bg-zinc-600/40 backdrop-blur-md border-b border-white/10">
+    <nav className="fixed w-full z-50 bg-black/30 backdrop-blur-md border-b border-white/5 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
           
-          {/* Logo Container - High position maintained, glow remains removed */}
+          {/* Logo Container */}
           <div className="flex-shrink-0 relative w-32 md:w-48 h-full">
             <div 
               className="cursor-pointer absolute -top-2 md:-top-5 left-0 z-50" 
               onClick={scrollToTop}
             >
               <img 
-                src="https://curious-pink-0vuack0gqf-n1v18jz7e6.edgeone.app/IMG_20251229_231556-removebg-preview.png" 
+                src="https://s10.aconvert.com/convert/p3r68-cdx67/actnm-6lb6j.png" 
                 alt="Zenith Digital Logo" 
                 className="h-20 md:h-32 w-auto object-contain transition-transform hover:scale-105 duration-300"
               />
@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
                 key={link.name}
                 href={link.href} 
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="text-white hover:text-brand-cyan transition-colors text-xs uppercase tracking-widest font-semibold"
+                className="text-white/90 hover:text-brand-cyan transition-colors text-xs uppercase tracking-widest font-semibold drop-shadow-sm"
               >
                 {link.name}
               </a>
@@ -70,7 +70,7 @@ const Navbar: React.FC = () => {
             <a 
               href="#contact" 
               onClick={(e) => handleNavClick(e, '#contact')}
-              className="bg-brand-cyan text-brand-dark px-6 py-2 text-xs font-bold hover:bg-white transition-all uppercase tracking-widest"
+              className="bg-brand-cyan text-brand-dark px-6 py-2 text-xs font-bold hover:bg-white transition-all uppercase tracking-widest shadow-lg"
             >
               Contato
             </a>
@@ -91,7 +91,7 @@ const Navbar: React.FC = () => {
       
       {/* Mobile Menu Overlay */}
       <div 
-        className={`${isOpen ? 'block' : 'hidden'} md:hidden bg-zinc-700/95 backdrop-blur-xl border-b border-gray-800 absolute w-full text-center py-6 space-y-4 shadow-xl z-40`}
+        className={`${isOpen ? 'block' : 'hidden'} md:hidden bg-zinc-950/95 backdrop-blur-2xl border-b border-white/10 absolute w-full text-center py-6 space-y-4 shadow-xl z-40`}
       >
         {navLinks.map((link) => (
           <a 
