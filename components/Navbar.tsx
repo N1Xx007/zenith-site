@@ -48,7 +48,7 @@ const Navbar: React.FC = () => {
               onClick={scrollToTop}
             >
               <img 
-                src="https://s10.aconvert.com/convert/p3r68-cdx67/actnm-6lb6j.png" 
+                src="https://yappy-teal-tkvcp9rqrg.edgeone.app/Sem%20Título-1.png" 
                 alt="Zenith Digital Logo" 
                 className="h-20 md:h-32 w-auto object-contain transition-transform hover:scale-105 duration-300"
               />
