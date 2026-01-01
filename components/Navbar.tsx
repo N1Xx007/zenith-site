@@ -36,21 +36,33 @@ const Navbar: React.FC = () => {
     { name: 'Depoimentos', href: '#reviews' },
   ];
 
+  // Nova URL da logo com codificação para caracteres especiais (Sem Título-1.png)
+  const logoUrl = "https://delicious-salmon-3eelclwb40.edgeone.app/Sem%20T%C3%ADtulo-1.png";
+
   return (
-    <nav className="fixed w-full z-50 bg-black/30 backdrop-blur-md border-b border-white/5 transition-all duration-300">
+    <nav className="fixed w-full z-50 bg-black/40 backdrop-blur-md border-b border-white/5 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
           
-          {/* Logo Container */}
-          <div className="flex-shrink-0 relative w-32 md:w-48 h-full">
+          {/* Logo Container - Mantendo estabilidade máxima */}
+          <div className="flex-shrink-0 flex items-center h-full">
             <div 
-              className="cursor-pointer absolute -top-2 md:-top-5 left-0 z-50" 
+              className="cursor-pointer relative z-50 flex items-center" 
               onClick={scrollToTop}
             >
               <img 
-                src="https://yappy-teal-tkvcp9rqrg.edgeone.app/Sem%20Título-1.png" 
-                alt="Zenith Digital Logo" 
-                className="h-20 md:h-32 w-auto object-contain transition-transform hover:scale-105 duration-300"
+                src={logoUrl} 
+                alt="Zenith Digital" 
+                loading="eager"
+                className="h-12 md:h-20 w-auto object-contain transition-transform hover:scale-105 duration-300 drop-shadow-[0_0_12px_rgba(6,182,212,0.4)]"
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  console.warn("Falha ao carregar a nova logo, tentando recarregar...");
+                  // Tentativa de reload com cache bust se houver falha na rede
+                  setTimeout(() => {
+                    target.src = logoUrl + "?t=" + new Date().getTime();
+                  }, 2000);
+                }}
               />
             </div>
           </div>
@@ -91,13 +103,13 @@ const Navbar: React.FC = () => {
       
       {/* Mobile Menu Overlay */}
       <div 
-        className={`${isOpen ? 'block' : 'hidden'} md:hidden bg-zinc-950/95 backdrop-blur-2xl border-b border-white/10 absolute w-full text-center py-6 space-y-4 shadow-xl z-40`}
+        className={`${isOpen ? 'block' : 'hidden'} md:hidden bg-zinc-950/98 backdrop-blur-3xl border-b border-white/10 absolute w-full text-center py-8 space-y-6 shadow-2xl z-40 transition-all`}
       >
         {navLinks.map((link) => (
           <a 
             key={link.name}
             href={link.href} 
-            className="block text-sm font-medium text-white hover:text-brand-cyan transition-colors"
+            className="block text-base font-medium text-white hover:text-brand-cyan transition-colors"
             onClick={(e) => handleNavClick(e, link.href)}
           >
             {link.name}
@@ -105,7 +117,7 @@ const Navbar: React.FC = () => {
         ))}
         <a 
           href="#contact" 
-          className="block text-sm font-bold text-brand-cyan uppercase pt-2"
+          className="inline-block text-sm font-bold text-brand-dark bg-brand-cyan px-8 py-3 uppercase tracking-widest rounded-sm"
           onClick={(e) => handleNavClick(e, '#contact')}
         >
           Contato
