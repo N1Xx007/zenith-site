@@ -36,15 +36,15 @@ const Navbar: React.FC = () => {
     { name: 'Depoimentos', href: '#reviews' },
   ];
 
-  // Nova URL da logo com codificação para caracteres especiais (Sem Título-1.png)
-  const logoUrl = "https://delicious-salmon-3eelclwb40.edgeone.app/Sem%20T%C3%ADtulo-1.png";
+  // URL Codificada para o novo link fornecido pelo usuário
+  const logoUrl = "https://fragile-gold-e0qwfekroi.edgeone.app/Sem%20T%C3%ADtulo-1.png";
 
   return (
     <nav className="fixed w-full z-50 bg-black/40 backdrop-blur-md border-b border-white/5 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
           
-          {/* Logo Container - Mantendo estabilidade máxima */}
+          {/* Logo Container - Implementação robusta para evitar desaparecimento */}
           <div className="flex-shrink-0 flex items-center h-full">
             <div 
               className="cursor-pointer relative z-50 flex items-center" 
@@ -57,8 +57,8 @@ const Navbar: React.FC = () => {
                 className="h-12 md:h-20 w-auto object-contain transition-transform hover:scale-105 duration-300 drop-shadow-[0_0_12px_rgba(6,182,212,0.4)]"
                 onError={(e) => {
                   const target = e.currentTarget;
-                  console.warn("Falha ao carregar a nova logo, tentando recarregar...");
-                  // Tentativa de reload com cache bust se houver falha na rede
+                  console.warn("Falha ao carregar a logo, tentando recarregar...");
+                  // Evita o desaparecimento forçando um pequeno delay para tentativa de reload
                   setTimeout(() => {
                     target.src = logoUrl + "?t=" + new Date().getTime();
                   }, 2000);
